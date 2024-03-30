@@ -2,6 +2,7 @@
 
 // Initializing the balance amount as 0.
 float balance_amount = 0.0;
+int user_pin=1234;
 
 // Function for operations in ATM Machine
 void atm_machine_transaction();
@@ -16,6 +17,14 @@ int main()
 // Function definition for operations in ATM Machine
 void atm_machine_transaction()
 {
+    printf("WELCOME TO THE ATM MACHINE\n");
+    int entered_pin;
+    printf("enter your PIN:");
+    scanf("%d",&entered_pin);
+    if(entered_pin!=user_pin){
+        printf("Incorrect PIN.Please try again.\n");
+        return;
+    }
     printf("Choices Available in the ATM Machine\n");
     printf("1. Deposit Money\n");
     printf("2. Withdraw Money\n");
